@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neo4jBasket", "Neo4jBasket\Neo4jBasket.csproj", "{F3A0CDA4-F34A-4757-855E-68FE81EBAACF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3A0CDA4-F34A-4757-855E-68FE81EBAACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A0CDA4-F34A-4757-855E-68FE81EBAACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A0CDA4-F34A-4757-855E-68FE81EBAACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A0CDA4-F34A-4757-855E-68FE81EBAACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EA31AA8-4AD0-4AF2-9EB0-84A1EBD7FBF8}
+	EndGlobalSection
+EndGlobal

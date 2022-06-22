@@ -1,0 +1,30 @@
+﻿Naziv projekta : Softverska Kompanija
+Naziv predmeta : Sistemi Baza Podataka
+
+Studenti : 
+1. Dimitrije Jovic 15657
+2. Milos Krcobic 15683
+
+
+Forma Login,ujedino i forma koja se pokrece pri startovanju, je forma koja sluzi kako bi se korisnici 
+aplikacije prijavili i koristili funkcionalnosti koje prilozena aplikacija nudi. Ukoliko se kao parametri 
+unese ime: admin prezime : admin JMBG: 1234,
+startuje se forma namenjena adminu na kojoj su moguce sledece funkcionalnosti, prvo se vrsi ucitavanje
+svih programera, starijih projektanat i projekata. Postoji mogucnost brisanja selektovanih programera i
+starijih projektanata, kao i zavrsavanje projekta, postavljanjem datuma kraj na odre-
+djeni datum. Takodje je moguce dodati programera, projektanta i projekat, pri cemu se otvara nova forma
+i unose se zahtevani podaci. Kliktanjem na odredjenog programera ili projektanta otvara se nova forma i 
+nudi mogucnost azuriranja. Forma DodajZaposlenogForma je iskoristena za kreiranje i azuriranje zaposlenih
+(programer ili projektant). 
+
+ProgramerForma je forma koja se ucitava kada se na sistem prijavi programer, prikazu je se lista projekata
+na kojima je isti angazovan, i lista spoljnih saradnika sa kojima saradjuje, i postoji mogucnost prekida sarad-
+nje, a klikom na dugme angazuje otvara se forma AngazujSaradnikeForma i omogucava se angazovanje.
+
+StarijiProjektantForma se otvara kada se na sistem prijavi projektant, prvo se prikazuje lista projekata
+kojima isti rukovodi, na kliktaj na odredjeni projekat otvara se nova forma, ProgrameriNaProjektu gde se nudi mogu-
+cnost dodavanja i otpustanja programera. Dodavanje se vrsi kliktajem na dugme dodaj, otvara se forma 
+AngazujSaradnikeForma gde se prikazuje lista onih programera koji nisu angazovani i kliktanjem na odredjenog
+on postaje angazovan i brise se iz te liste.
+
+Form1 je forma koja je koriscena i za drugu fazu projekta i sadrzi takodje odredjene funkcionalnost.

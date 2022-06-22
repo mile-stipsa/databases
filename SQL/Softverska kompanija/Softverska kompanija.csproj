@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9BEF00E-E01C-4A87-BB49-D6498ED61A7E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Softverska_kompanija</RootNamespace>
+    <AssemblyName>Softverska kompanija</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.1.2\lib\net461\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.1.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.5.1.2\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forme\AdministratorForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\AdministratorForma.Designer.cs">
+      <DependentUpon>AdministratorForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\AngazujSaradnikeForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\AngazujSaradnikeForma.Designer.cs">
+      <DependentUpon>AngazujSaradnikeForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataLayer.cs" />
+    <Compile Include="Forme\DodajTelefonForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajTelefonForma.Designer.cs">
+      <DependentUpon>DodajTelefonForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajZaposlenogForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajZaposlenogForma.Designer.cs">
+      <DependentUpon>DodajZaposlenogForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DTOManager.cs" />
+    <Compile Include="DTO\FirmaPRBasic.cs" />
+    <Compile Include="DTO\OutSourcingBasic.cs" />
+    <Compile Include="DTO\ProgramerBasic.cs" />
+    <Compile Include="DTO\ProgramskiJezikBasic.cs" />
+    <Compile Include="DTO\ProjekatBasic.cs" />
+    <Compile Include="DTO\SpoljniSaradnikBasic.cs" />
+    <Compile Include="DTO\StarijiProjektantBasic.cs" />
+    <Compile Include="DTO\STelefonBasic.cs" />
+    <Compile Include="DTO\TelefonBasic.cs" />
+    <Compile Include="Entiteti\Angazovani.cs" />
+    <Compile Include="Entiteti\ProgramskiJezik.cs" />
+    <Compile Include="Entiteti\Rukovodi.cs" />
+    <Compile Include="Entiteti\SoftverskiProjekat.cs" />
+    <Compile Include="Entiteti\SpoljniSaradnik.cs" />
+    <Compile Include="Entiteti\STelefon.cs" />
+    <Compile Include="Entiteti\Telefon.cs" />
+    <Compile Include="Entiteti\Zaposleni.cs" />
+    <Compile Include="Entiteti\Zna.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mapiranja\AngazovaniMapiranja.cs" />
+    <Compile Include="Mapiranja\ProgramskiJezikMapiranja.cs" />
+    <Compile Include="Mapiranja\RukovodiMapiranja.cs" />
+    <Compile Include="Mapiranja\SoftverskiProjekatMapiranja.cs" />
+    <Compile Include="Mapiranja\SpoljniSaradnikMapiranja.cs" />
+    <Compile Include="Mapiranja\STelefonMapiranja.cs" />
+    <Compile Include="Mapiranja\TelefonMapiranja.cs" />
+    <Compile Include="Mapiranja\ZaposleniMapiranja.cs" />
+    <Compile Include="Mapiranja\ZnaMapiranja.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Forme\ProgramerForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ProgramerForma.Designer.cs">
+      <DependentUpon>ProgramerForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZaposleniKojiNisuNaProjektu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZaposleniKojiNisuNaProjektu.Designer.cs">
+      <DependentUpon>ZaposleniKojiNisuNaProjektu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZaposleniNaProjektu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZaposleniNaProjektu.Designer.cs">
+      <DependentUpon>ZaposleniNaProjektu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forme\StarijiProjektantForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\StarijiProjektantForma.Designer.cs">
+      <DependentUpon>StarijiProjektantForma.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forme\AdministratorForma.resx">
+      <DependentUpon>AdministratorForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\AngazujSaradnikeForma.resx">
+      <DependentUpon>AngazujSaradnikeForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajTelefonForma.resx">
+      <DependentUpon>DodajTelefonForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajZaposlenogForma.resx">
+      <DependentUpon>DodajZaposlenogForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ProgramerForma.resx">
+      <DependentUpon>ProgramerForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZaposleniKojiNisuNaProjektu.resx">
+      <DependentUpon>ZaposleniKojiNisuNaProjektu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZaposleniNaProjektu.resx">
+      <DependentUpon>ZaposleniNaProjektu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forme\StarijiProjektantForma.resx">
+      <DependentUpon>StarijiProjektantForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Uputstvo\KorisnickoUpustvo.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

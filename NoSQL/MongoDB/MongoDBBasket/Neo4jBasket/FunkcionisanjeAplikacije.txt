@@ -1,0 +1,21 @@
+﻿Predmet: Napredne Baze Podataka
+Tim:
+1.Dimitrije Jovic 15657
+2.Milos Krcobic 15683
+
+Korisceno resenje - MongoDB
+Entiteti u bazi:Igrac, Klub, Godina, Statistika, Utakmica, Trener
+
+
+
+Aplikacija je kreirana tako da se vrsi prikaz klubova, vaznih parametara vezanih za klub kao sto su ime, dvorana, igraci koji igraju.Takodje
+je moguce i videti i informacije o igracima, treneru, prethodnim utakmicama tima. Na pocetnoj formi se ucitavaju svi timovi iz baze a selektovanjem jednog
+i kliktanjem na dugme dostignuca otvara se nova forma sa informacijama o dostignucima tima (pobednik Evrolige, Evrokupa npr). Takodje je moguce dodati i nova
+dostignuca ukoliko ih je tim postigao.
+
+Dvoklikom na neki tim iz datagridview-a otvara se nova forma na kojoj se prikazuje informacije o treneru, rosteru i utakmicama, ukoliko u bazi nije dodat trener
+za klub, pre otvaranja forme sa podacima otvara se forma sa unos trenera. Na formi sa podacima moguce je pogledati sve bivse klubove za trenera, takodje je moguce
+dodati i utakmicu ukoliko je tim odigrao neku. Ako se za protivnika stavi tim koji ne postoji u bazi otvara se forma na kojoj se nudi mogucnost kreiranja tog tima.
+
+Moguce je otpustiti igraca iz tima, tako isto i dodati novog. Selektovanjem igraca i dvoklikom otvara se forma na kojoj se prikazuje statiska igraca na prethodnim utakmicama
+i spisak timova za koje je igrao.

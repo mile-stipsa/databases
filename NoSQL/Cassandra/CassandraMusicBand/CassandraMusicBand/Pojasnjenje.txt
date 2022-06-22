@@ -1,0 +1,19 @@
+﻿Tim:
+1.Dimitrije Jovic 15657
+2.Milos Krcobic 15683
+
+Korisceno NoSQL resnjenje:Cassandra
+
+
+Pri pokretanju aplikacije vrsi se ucitvanje svih bendova sacuvanih u bazi i prikaz podataka o njima,
+postoji mogucnost dodavanja novog benda pri cemu se otvara nova forma i zahteva se  unos potrebnih podataka.
+
+Selektovanjem nekog od benda iz DataGridView-a otvara se forma na kojoj se vrsi prikaz muzicara benda i informacije o njima
+zatim pevaci, lista albuma i lista koncerata. Takodje vrsi se prikazivanje menadzera, ukoliko bend ne poseduje menadzera nudi se mogucnost dodavanja
+istog. Ukoliko bend poseduje menadzera nudi se mogucnost otpustanja istog. Prilikom dodavanja vrsi se otvaranje nove forme na kojoj postoji se zahteva
+da se unesu podaci vezani za menadzera. Takodje postoji mogucnost da bend promeni ime ukoliko je potrebno (fuzija dva benda u jedan). Postoji mogucnost 
+dodavanja novog muzicara ili pevaca, pri cemu se za ove dve akcije otvaraju nove forme i zahteva se unos podataka. Isto tako postoji mogucnost otpustanja
+istih. Isto tako klikom na dugme za dodavanje koncerta, otvara se nova forma na kojoj je potrebno uneti informacije o gradu i datumu odrzavanja koncerta.
+
+Selektovanjem nekog od albuma iz liste albuma prikazuje se spisak pesama koje se nalaze na tom albumu u okviru nove forme, ukoliko pak nijedan album nije dodat postuji mogucnost
+dodavanja albuma, a nakon izvrsenog dodavanja, moguce je dodati i pesme za taj album na novootvorenoj formi.

@@ -1,0 +1,62 @@
+CREATE TABLE "Bend" (
+    "BendID" text,
+    ime text,
+    stil text,
+    datumOsnivanja text,
+    PRIMARY KEY ("BendID")
+)
+
+CREATE TABLE "Pesma" (
+    "PesmaID" text,
+    "AlbumID" text,
+    naziv text,
+    trajanje text,
+    datumIzlaska text,
+    PRIMARY KEY ("PesmaID","AlbumID")
+)
+
+CREATE TABLE "Album" (
+    "AlbumID" text,
+    "BendID" text,
+    naziv text,
+    brojPesama text,
+    datumIzlaska text,
+    PRIMARY KEY ("AlbumID","BendID")
+)
+
+CREATE TABLE "Menadzer" (
+    "MenadzerID" text,
+    "BendID" text,
+    ime text,
+    prezime text,
+    brojTelefona text,
+    email text,
+    PRIMARY KEY ("MenadzerID","BendID")
+)
+
+CREATE TABLE "Pevac" (
+    "PevacID" text,
+    "BendID" text,
+    ime text,
+    prezime text,
+    nadimak text,
+    PRIMARY KEY ("PevacID","BendID")
+)
+
+CREATE TABLE "Muzicar" (
+    "MuzicarID" text,
+    "BendID" text,
+    ime text,
+    prezime text,
+    nadimak text,
+    instrument text,
+    PRIMARY KEY ("MuzicarID","BendID")
+)
+
+CREATE TABLE "Koncert" (
+    "KoncertID" text,
+    "BendID" text,
+    grad text,
+    datum text,
+    PRIMARY KEY ("KoncertID","BendID")
+)

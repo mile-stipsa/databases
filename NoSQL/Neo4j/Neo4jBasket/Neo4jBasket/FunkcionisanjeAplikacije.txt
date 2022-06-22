@@ -1,0 +1,33 @@
+﻿Predmet: Napredne Baze Podataka
+Tim:
+1.Dimitrije Jovic 15657
+2.Milos Krcobic 15683
+
+Korisceno NoSQL resenje - Neo4J
+
+Aplikacija je zamisljena da funkcionise na sledeci nacin, prvo se na pocetnoj formi Form1.cs ucitavaju svi klubovi koji se nalaze
+u graf bazi podataka.
+
+Takodje na pocetnoj strani nalazi se dugme gde se za selektovani klub iz DataGrdiView-a prvo vrsi prikaz svih dostignuca i nudi
+mogucnost dodavanja dostignuca u vidu osvajanja nekog takmicenja (Evroliga,Evroukup) za konkretnu godinu. Prikaz se vrsi na formi Dostignuca.cs
+a dodavanja na DodajDostignuce.cs.
+
+Ukoliko se selektuje odrednji klub i dva puta klikne na header selektovane vrste otvara se nova forma KlubFormacs.cs gde se vrsi prikazivanje
+trenutnog rostera, odnosno tima, zatim trenutni trener i neke od utakmica koje je tim odigrao.
+
+Selektovanje nekog od igraca otvara se nova Forma Karijera.cs gde se vrsi prikaz bivsih klubova i statistika sa nekih utakmica na kojima je 
+igrac igrao.
+
+Klikom na dugme otpusti igraca, igrac prestaje da bude clan tima i tim se dodaje u skup timova za koje je igrac igrao, u slucaju da dodje do transfera
+u neki drugi klub. Klikom na dodajigrac otvara se nova forma DodajIgraca.cs gde se unose podaci o igracu koji je pristigao u klub i on se dodaj u tim.
+
+Klikom na dugme dodaj utakmicu , vrsi se dodavanje utakmice ukoliko je tim u medjuvremenu odigrao neku. Ukoliko je protivnicki tim neki tim koji se ne 
+nalazi u bazi on se kreira i dodaje, kao i rezultat same utakmice, dodavanje se vrsi pomocu forme KreirajKlub.cs. Ukoliko se na pocetnoj formi selektuje klub koji
+je kreiran a nije mu pridodat trener vrsi se dodavanje trenera uz pomoc forme DodajTrenera.cs
+
+Klikom na dugme prikazi bivse klubove vrsi se otvaranje forme BivsiTimovi.cs i vrsi se prikaz istih
+
+Entiteti u graf bazi:Igrac, Klub, Godina, Statistika, Utakmica, Trener
+Veze odnosno potezi izmedju cvorova grafa: Tim1 (veza sa utakmicom jedan tim), Tim2 (veza sa utakmicom drugi tim), Trenira (veza Trenera i Kluba)
+, Trenirao (veza Trenera i bivsih klubova), Evrokup (veza Tima i Godine), Evroliga (isto), Vicesampion (isto), Ucinak (Igrac i Statistika)
+, Igra (Igrac i trenutni Tim), Igrao (Igrac i bivsi Klubovi), IgraoUtakmicu (veza izmedju Igraca i Utakmice)

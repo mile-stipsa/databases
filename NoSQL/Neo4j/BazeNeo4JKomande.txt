@@ -1,0 +1,261 @@
+CREATE (n:Klub { ime: 'Crvena Zvezda', grad: 'Beograd' , dvorana:'Aleksandar Nikolic' })
+CREATE (n:Klub { ime: 'Olimpijakos', grad: 'Atina' , dvorana:'Dvorana mira i prijateljstva' })
+CREATE (n:Klub { ime: 'Zalgiris', grad: 'Kaunas' , dvorana:'Zalgiris Arena' })
+CREATE (n:Klub { ime: 'Makabi', grad: 'Tel Aviv' , dvorana:'Nokia Arena' })
+CREATE (n:Klub { ime: 'Darusafaka', grad: 'Instanbul' , dvorana:'Folksvagen Arena' })
+CREATE (n:Klub { ime: 'Bajern', grad: 'Minhen' , dvorana:'Audi Dom' })
+CREATE (n:Klub { ime: 'Uniks', grad: 'Kazanj' , dvorana:'Basket Hall Arena' })
+CREATE (n:Klub { ime: 'Neptunas', grad: 'Klaipeda' , dvorana:'Klaipedska Arena' })
+CREATE (n:Klub { ime: 'FMP', grad: 'Beograd' , dvorana:'Zeleznik' })
+CREATE (n:Klub { ime: 'PAO', grad: 'Atina' , dvorana:'OAKA arena' })
+CREATE (n:Klub { ime: 'Unikaha', grad: 'Malaga' , dvorana:'Palata sportova' })
+
+CREATE (n:Igrac { ime: 'Branko', prezime: 'Lazic' , godinarod:'1989', visina:'198', pozicija:'krilo' })
+CREATE (n:Igrac { ime: 'Majk', prezime: 'Cirbes' , godinarod:'1990', visina:'207', pozicija:'centar' })
+CREATE (n:Igrac { ime: 'Majkl', prezime: 'Skot' , godinarod:'1987', visina:'201', pozicija:'bek' })
+CREATE (n:Igrac { ime: 'Vasilis', prezime: 'Spanulis' , godinarod:'1982', visina:'193', pozicija:'plejmejker' })
+CREATE (n:Igrac { ime: 'Jorgos', prezime: 'Printezis' , godinarod:'1985', visina:'206', pozicija:'krilni-centar' })
+CREATE (n:Igrac { ime: 'Arturas', prezime: 'Milaksnis' , godinarod:'1986', visina:'195', pozicija:'bek' })
+CREATE (n:Igrac { ime: 'Edgaras', prezime: 'Ulanovas' , godinarod:'1992', visina:'198', pozicija:'krilo' })
+CREATE (n:Igrac { ime: 'Aleks', prezime: 'Tajus' , godinarod:'1984', visina:'211', pozicija:'centar' })
+
+CREATE (n:Trener { ime: 'Milan', prezime: 'Tomic' , godinarod:'1973' })
+CREATE (n:Trener { ime: 'Dejvid', prezime: 'Blat' , godinarod:'1959' })
+CREATE (n:Trener { ime: 'Sarunas', prezime: 'Jasikevicius' , godinarod:'1976' })
+
+CREATE (n:Godina { godina: '2018' })
+CREATE (n:Godina { godina: '2017' })
+CREATE (n:Godina { godina: '2016' })
+
+CREATE (n:Utakmica { rezultat: '95:89' })
+CREATE (n:Utakmica { rezultat: '105:76' })
+CREATE (n:Utakmica { rezultat: '55:86' })
+CREATE (n:Utakmica { rezultat: '88:87' })
+CREATE (n:Utakmica { rezultat: '68:107' })
+
+CREATE (n:Statistika {ime: 'Majk', prezime: 'Cirbes', procenat1: '88', procenat2: '70', procenat3: '0', skokovi:'12', indeks: '24' })
+CREATE (n:Statistika {ime: 'Branko', prezime: 'Lazic', procenat1: '100', procenat2: '50', procenat3: '33', skokovi:'3', indeks: '10' })
+CREATE (n:Statistika {ime: 'Vasilis', prezime: 'Spanulis', procenat1: '100', procenat2: '90', procenat3: '63', skokovi:'8', indeks: '29' })
+CREATE (n:Statistika {ime: 'Arturas', prezime: 'Milaksnis', procenat1: '100', procenat2: '25', procenat3: '77', skokovi:'15', indeks: '34' })
+CREATE (n:Statistika {ime: 'Majkl', prezime: 'Skot', procenat1: '73', procenat2: '59', procenat3: '100', skokovi:'6', indeks: '18' })
+
+MATCH (a:Trener),(b:Klub)
+WHERE a.ime = 'Milan' AND a.prezime= 'Tomic' AND b.ime = 'Crvena Zvezda'
+CREATE (a)-[r:Trenira { godina: '2018' }]->(b)
+RETURN type(r), r.godina
+
+MATCH (a:Trener),(b:Klub)
+WHERE a.ime = 'Dejvid' AND a.prezime= 'Blat' AND b.ime = 'Olimpijakos'
+CREATE (a)-[r:Trenira { godina: '2018' }]->(b)
+RETURN type(r), r.godina
+
+MATCH (a:Trener),(b:Klub)
+WHERE a.ime = 'Sarunas' AND a.prezime= 'Jasikevicius' AND b.ime = 'Zalgiris'
+CREATE (a)-[r:Trenira { godina: '2016' }]->(b)
+RETURN type(r), r.godina
+
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Crvena Zvezda' AND b.ime = 'Branko' AND b.prezime='Lazic'
+CREATE (a)-[r:Igra]->(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Bajern' AND b.ime = 'Majkl' AND b.prezime='Skot'
+CREATE (a)-[r:Igra]->(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Makabi' AND b.ime = 'Aleks' AND b.prezime='Tajus'
+CREATE (a)-[r:Igra]->(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Crvena Zvezda' AND b.ime = 'Majk' AND b.prezime='Cirbes'
+CREATE (a)-[r:Igra]->(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Olimpijakos' AND b.ime = 'Jorgos' AND b.prezime='Printezis'
+CREATE (a)-[r:Igra]->(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Olimpijakos' AND b.ime = 'Vasilis' AND b.prezime='Spanulis'
+CREATE (a)-[r:Igra]->(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Zalgiris' AND b.ime = 'Arturas' AND b.prezime='Milaksnis'
+CREATE (a)-[r:Igra]->(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Zalgiris' AND b.ime = 'Edgaras' AND b.prezime='Ulanovas'
+CREATE (a)-[r:Igra]->(b)
+RETURN type(r)
+
+MATCH (a:Trener),(b:Klub)
+WHERE a.ime = 'Dejvid' AND a.prezime= 'Blat' AND b.ime = 'Makabi'
+CREATE (a)-[r:Trenirao]->(b)
+RETURN type(r)
+
+MATCH (a:Trener),(b:Klub)
+WHERE a.ime = 'Dejvid' AND a.prezime= 'Blat' AND b.ime = 'Darusafaka'
+CREATE (a)-[r:Trenirao]->(b)
+RETURN type(r)
+
+MATCH (a:Trener),(b:Klub)
+WHERE a.ime = 'Milan' AND a.prezime= 'Tomic' AND b.ime = 'Olimpijakos'
+CREATE (a)-[r:Trenirao]->(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Makabi' AND b.ime = 'Majk' AND b.prezime='Cirbes'
+CREATE (a)<-[r:Igrao]-(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Bajern' AND b.ime = 'Majk' AND b.prezime='Cirbes'
+CREATE (a)<-[r:Igrao]-(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Neptunas' AND b.ime = 'Edgaras' AND b.prezime='Ulanovas'
+CREATE (a)<-[r:Igrao]-(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'FMP' AND b.ime = 'Branko' AND b.prezime='Lazic'
+CREATE (a)<-[r:Igrao]-(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Uniks' AND b.ime = 'Arturas' AND b.prezime='Milaksnis'
+CREATE (a)<-[r:Igrao]-(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'PAO' AND b.ime = 'Vasilis' AND b.prezime='Spanulis'
+CREATE (a)<-[r:Igrao]-(b)
+RETURN type(r)
+
+MATCH (a:Klub),(b:Igrac)
+WHERE a.ime = 'Unikaha' AND b.ime = 'Jorgos' AND b.prezime='Printezis'
+CREATE (a)<-[r:Igrao]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2018' AND b.ime = 'Makabi'
+CREATE (a)<-[r:Evroliga]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2017' AND b.ime = 'Olimpijakos'
+CREATE (a)<-[r:Evroliga]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2016' AND b.ime = 'Zalgiris'
+CREATE (a)<-[r:Evroliga]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2017' AND b.ime = 'Zalgiris'
+CREATE (a)<-[r:Vicesampion]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2016' AND b.ime = 'Crvena Zvezda'
+CREATE (a)<-[r:Vicesampion]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2018' AND b.ime = 'Neptunas'
+CREATE (a)<-[r:Vicesampion]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2018' AND b.ime = 'Bajern'
+CREATE (a)<-[r:Evrokup]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2017' AND b.ime = 'PAO'
+CREATE (a)<-[r:Evrokup]-(b)
+RETURN type(r)
+
+MATCH (a:Godina),(b:Klub)
+WHERE a.godina = '2016' AND b.ime = 'Uniks'
+CREATE (a)<-[r:Evrokup]-(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '95:89' AND b.ime= 'Zalgiris'
+CREATE (a)-[r:Tim1]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '95:89' AND b.ime= 'PAO'
+CREATE (a)-[r:Tim2]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '105:76' AND b.ime= 'Olimpijakos'
+CREATE (a)-[r:Tim1]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '105:76' AND b.ime= 'Unikaha'
+CREATE (a)-[r:Tim2]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '55:86' AND b.ime= 'Neptunas'
+CREATE (a)-[r:Tim1]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '55:86' AND b.ime= 'Crvena Zvezda'
+CREATE (a)-[r:Tim2]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '88:87' AND b.ime= 'Crvena Zvezda'
+CREATE (a)-[r:Tim1]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '88:87' AND b.ime= 'Makabi'
+CREATE (a)-[r:Tim2]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '68:107' AND b.ime= 'Bajern'
+CREATE (a)-[r:Tim2]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Klub)
+WHERE a.rezultat = '68:107' AND b.ime= 'Darusafaka'
+CREATE (a)-[r:Tim1]->(b)
+RETURN type(r)
+
+MATCH (a:Utakmica),(b:Igrac),(c:Statistika)
+WHERE a.rezultat = '105:76' AND b.ime= 'Vasilis'AND b.prezime='Spanulis'AND c.ime='Vasilis'AND c.prezime='Spanulis'
+CREATE (a)-[r:IgraoUtakmicu]->(b)-[m:Ucinak]->(c)
+RETURN type(r), type(m)
+
+MATCH (a:Utakmica),(b:Igrac),(c:Statistika)
+WHERE a.rezultat = '55:86' AND b.ime= 'Majk'AND b.prezime='Cirbes'AND c.ime='Majk'AND c.prezime='Cirbes'
+CREATE (a)-[r:IgraoUtakmicu]->(b)-[m:Ucinak]->(c)
+RETURN type(r), type(m)
+
+MATCH (a:Utakmica),(b:Igrac),(c:Statistika)
+WHERE a.rezultat = '88:87' AND b.ime= 'Branko'AND b.prezime='Lazic'AND c.ime='Branko'AND c.prezime='Lazic'
+CREATE (a)-[r:IgraoUtakmicu]->(b)-[m:Ucinak]->(c)
+RETURN type(r), type(m)
+
+MATCH (a:Utakmica),(b:Igrac),(c:Statistika)
+WHERE a.rezultat = '68:107' AND b.ime= 'Majkl'AND b.prezime='Skot'AND c.ime='Majkl'AND c.prezime='Skot'
+CREATE (a)-[r:IgraoUtakmicu]->(b)-[m:Ucinak]->(c)
+RETURN type(r), type(m)
